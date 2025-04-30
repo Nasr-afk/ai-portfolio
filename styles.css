@@ -1,0 +1,79 @@
+/* Base Styles */
+body {
+    background: #000;
+    color: #33ff33;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 20px;
+    overflow: hidden;
+  }
+  
+  #terminal {
+    max-width: 800px;
+    margin: auto;
+    white-space: pre-wrap;
+    line-height: 1.5;
+    height: 90vh;
+    overflow-y: auto;
+    border: 1px solid #33ff33;
+    padding: 20px;
+  }
+  
+  /* Dark Mode */
+  body.dark {
+    background-color: #121212;
+    color: #ffffff;
+  }
+  
+  body.dark #terminal {
+    border-color: #ffffff;
+  }
+  
+  button {
+    background: transparent;
+    color: #33ff33;
+    border: 1px solid #33ff33;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  
+  .input-line {
+    display: flex;
+  }
+  
+  .input-line::before {
+    content: '> ';
+    color: #33ff33;
+  }
+  
+  input {
+    background: transparent;
+    color: #33ff33;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    width: 100%;
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .blinking-cursor::after {
+    content: '_';
+    animation: blink 1s step-end infinite;
+  }
+  
+  @keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  
